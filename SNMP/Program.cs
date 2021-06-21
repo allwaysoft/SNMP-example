@@ -13,7 +13,7 @@ namespace SNMP
     class Program
     {
         // Host details
-        public const String IP_ADDRESS = "31.7.184.131";
+        public const String IP_ADDRESS = "127.0.0.1";
         public const int PORT_NUMBER = 161;
 
         // Message details
@@ -23,7 +23,7 @@ namespace SNMP
         static void Main(string[] args)
         {
             IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse(Program.IP_ADDRESS), Program.PORT_NUMBER);
-            UdpClient udpClient = new UdpClient(Program.PORT_NUMBER);
+            UdpClient udpClient = new UdpClient();
 
             udpClient.Connect(ipEndPoint);
 
